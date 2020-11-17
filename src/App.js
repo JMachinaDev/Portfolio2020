@@ -1,4 +1,5 @@
-import ProfileIcon from './icons/ProfileIcon';
+
+import { BsPersonFill } from 'react-icons/bs';
 import { FaBars } from 'react-icons/fa'; // icon directly from React
 import { FaAt } from 'react-icons/fa'; // icon directly from React
 import { FaCopy } from 'react-icons/fa'; // icon directly from React
@@ -8,8 +9,15 @@ import { FaChevronLeft } from 'react-icons/fa'; // icon directly from React
 import React, {useState, useEffect, useRef} from 'react';
 import { CSSTransition } from 'react-transition-group';
 
+const navBarStyle = {
+  position: 'fixed', 
+  zIndex: 1, 
+  width: '100%', 
+  // boxShadow: '0px 10px 15px #000000',
+}
 
-function App() {
+
+function Nav() {
   return (
     <Navbar>
 
@@ -23,9 +31,11 @@ function App() {
 
 function Navbar(props) {
   return (
-    <nav className="navbar">
-      <ul className="navbar-nav">{ props.children }</ul>
-    </nav>
+    <div style={navBarStyle}>
+      <nav  className="navbar">
+        <ul className="navbar-nav">{ props.children }</ul>
+      </nav>
+    </div>
   );
 }
 
@@ -80,12 +90,12 @@ function DropdownMenu (){
         in={activeMenu === 'main'} 
         timeout={500}
         classNames="menu-primary"
-        unmountOnExit 
+        unmountOnExit
         onEnter={calcHeight}
         >
           {/* MAIN MENU # */}
           <div className="menu">
-            <DropdownItem profileIcon={<ProfileIcon/>}>About me</DropdownItem>
+            <DropdownItem profileIcon={<BsPersonFill/>}>About me</DropdownItem>
               <DropdownItem
               leftIcon={<FaCopy/>}
               rightIcon={<FaChevronRight />}
@@ -99,8 +109,8 @@ function DropdownMenu (){
           {/* PROJECTS SUBMENU */}
       <CSSTransition 
         in={activeMenu === 'subMenu'} 
-        timeout={500} 
-        unmountOnExit 
+        timeout={500}
+        unmountOnExit
         classNames="menu-secondary"
         onEnter={calcHeight}
         >
@@ -111,7 +121,7 @@ function DropdownMenu (){
             <DropdownItem>Project 3</DropdownItem>
             <DropdownItem>Project 4</DropdownItem>
             <DropdownItem>Project 5</DropdownItem>
-        </div>
+          </div>
       </CSSTransition>
     </div>
   )
@@ -120,4 +130,4 @@ function DropdownMenu (){
 
 
 
-export default App;
+export default Nav;
