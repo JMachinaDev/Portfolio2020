@@ -1,6 +1,9 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 
+// https://www.youtube.com/watch?v=NgWGllOjkbs
+// https://www.docdroid.net/mydocuments
+
 export default function ContactUs() {
 
   function sendEmail(e) {
@@ -16,7 +19,7 @@ export default function ContactUs() {
   }
 
   return (
-    <div className="contactMeBox">
+    <div className="contactMeBox" id="contactMeId">
       <div className="contactMeForm">
         
         <div className="contactMeSection" >
@@ -43,12 +46,12 @@ export default function ContactUs() {
 
             <div className="contactMessage" >
               <label>
-                <textarea name="message" cols="32" rows="10 "style={{height: '200px', resize: "vertical"}} placeholder="Your Message"  required/>
+                <textarea name="message" cols="32" rows="10" style={{height: '200px', resize: "vertical"}} placeholder="Your Message"  required/>
               </label>
             </div>
 
             <div className="send" >
-              <input type="submit" value="Send" />
+              <input type="submit" value="Send" style={{width: '75px'}} />
             </div>
 
           </form>
@@ -58,10 +61,28 @@ export default function ContactUs() {
 
         <div className="myInfoBox" >
           <div className="myInfoTitle" >My <strong>Info</strong></div>
-          <div className="myInfo" ><strong>EMAIL</strong></div><span>jmachinadev@gmail.com</span>
-          <div className="myInfo" ><strong>PHONE</strong></div><span>+1-574-350-6350</span>
-          <div className="myInfo" ><strong>LOCATION</strong></div><span>Elkhart, Indiana</span>
+
+          <div className="myInfo" ><strong>EMAIL</strong></div>
+            <span style={{color: 'var(--text-color)'}}>jmachinadev@gmail.com</span>
+
+          <div className="myInfo" ><strong>PHONE</strong></div>
+            <span style={{color: 'var(--text-color)'}}>+1-574-350-6350</span>
+
+          <div className="myInfo" ><strong>LOCATION</strong></div>
+            <span style={{color: 'var(--text-color)'}}>Elkhart, Indiana</span>
+
+          <div style={{marginTop: '20px'}}>
+            <button className="resumeLink">
+              <a href="https://docs.google.com/document/d/1R20ZhgHepB6lejP6gVxxNemJTZAUgUd8YWI_nAezAPo/edit?usp=sharing" 
+              alt="" 
+              target="_blank" 
+              rel="noreferrer"
+              style={{color: 'var(--bg)', backgroundColor: '#fbfafa', fontWeight: 'light', textShadow: 'none'}}
+              >Resume</a></button>
+          </div>
         </div>
+
+
 
       </div>
     </div>

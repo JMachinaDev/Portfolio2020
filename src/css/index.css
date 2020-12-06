@@ -1,0 +1,518 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 'monospace';
+  font-family: 'Bungee Inline', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Bungee', cursive;
+}
+
+/* 
+color scheme
+https://www.canva.com/templates/EADajrMrgyw-salmon-meet-up-event-events-website/
+*/
+:root {
+  --nav-size: 60px;
+  --border-radius: 8px;
+  --speed: 500ms;
+
+  --bg: #323A45;
+  --bg-accent: #F3775A;
+  --text-color: #c0c0c0;
+  --border: 1px solid #8B554D;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  font-size: large;
+  text-shadow:1px 1px 5px #000000 ;
+  text-decoration: none;
+}
+
+/* 
+
+Navigation Bar
+
+*/
+#navBar {
+  background-color: var(--bg)!important;
+  border-bottom: 1px solid var(--bg-accent);
+  font-family: 'Oswald', 'Bungee' sans-serif !important;
+  font-weight: light;
+}
+#btnLink {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 2px #000000;
+
+}
+#btnLink:hover {
+  color: var(--bg-accent);
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  text-shadow: 3px 3px 7px #000000;
+}
+#menuButton {
+  background-color: var(--text-color);
+  text-decoration: none;
+  /* border-radius: 25%; */
+  /* box-shadow: 1px 1px 7px #000000; */
+}
+#menuButton:hover{
+  display: inline;
+  position: relative;
+  top: 1px;
+  /* background-color: var(--bg-accent); */
+  /* box-shadow: 3px 3px 7px #000000; */
+}
+
+
+ /*
+
+
+ Main Title : Welcome To DEV MACHINA
+
+
+ */
+.titleImage{
+  z-index: -1;
+  background-size: 'cover'; 
+  background-position: 'center center';
+}
+.bgColor {
+  background-color: var(--bg-accent);
+}
+.subTitle {
+  font-family:  'Oswald', sans-serif;
+  font-weight: lighter;
+  font-size: xx-large;
+  color: var(--bg-accent);
+  text-shadow: 10px 7px  4px rgb(0, 0, 0);
+  animation: fadeIn;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in;
+  text-align: left;
+  left: 60%;
+  top: 48%;
+  position: relative;
+  padding: 0px;
+  margin: 5px;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+@keyframes fadeIn {
+  0% {opacity: 0.0;}
+  50% {opacity: 0.5;}
+  75% {opacity: 0.75;}
+  100%{opacity: 1.0;}
+}
+.title {
+  position: relative;
+  left: 60%;
+  top: 50%;
+  font-family: 'Bungee Inline', 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: lighter;
+  color: var(--bg-accent);
+  text-shadow: 10px 7px  4px rgb(0, 0, 0);
+  text-align: left;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* 
+
+About Me Section
+
+*/
+.aboutMeBox{
+  background-color: var(--bg);
+  padding: 50px 0px;
+  height: auto;
+}
+.aboutMePage {
+  display: grid;
+  grid-template-areas:
+  " profilePic aboutMetitle  "
+  " profilePic aboutMeSection  ";
+  gap: 20px;
+  grid-template-columns: 1/1fr 1/2fr;
+  grid-template-rows: 1/2fr;
+  background: var(--bg);
+  margin: auto;
+  /* padding: 0px; */
+  height: auto;
+  text-align: left;
+  width: 80%;
+  justify-content: center;
+}
+@media screen and (max-width: 900px){
+  .aboutMePage {
+    grid-template-areas:
+      " profilePic "
+      " aboutMetitle  "
+      " aboutMeSection ";
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    width: 90%;
+  }
+}
+.aboutMeTitle {
+  grid-area: aboutMetitle;
+  
+  color: var(--bg-accent);
+  text-shadow: none;
+  font-size: 3rem;
+  font-family: 'Oswald';
+  text-shadow: -1px 1px 4px rgb(0, 0, 0);
+  text-align: center;
+}
+.aboutMeSection{
+  grid-area: aboutMeSection;
+
+  color: var(--text-color);
+  height: auto;
+  /* margin: auto; */
+  /* padding-bottom: 30px; */
+}
+.profilePic {
+  grid-area: profilePic;
+  
+  min-height: 300px;
+  min-width: 300px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/home/socks/Documents/Portfolio2020_v2/machina/src/images/profilepic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+/* 
+
+Developer Skills Section
+
+*/
+.developerSkillsBox{
+  height: auto;
+  margin: auto;
+}
+.developerSkillsPage {
+  margin: auto;
+  padding: 50px 0px;
+  height: auto;
+  width: 60%;
+}
+.developerSkills {
+  display: grid;
+  grid-template-areas:
+  "skillsTitle skillsTitle skillsTitle"
+  " html  css bootstrap"  
+  "javascript nodejs react"
+  " jquery git ruby";
+  gap: 20px;
+}
+@media screen and (max-width: 626px){
+  .developerSkills {
+    display: grid;
+    grid-template-areas:
+    "skillsTitle skillsTitle skillsTitle"
+    " html  css bootstrap"  
+    "javascript nodejs react"
+    " jquery git ruby";
+    gap: 10px;
+    height:auto;
+  }
+  .developerSkillsPage {
+    width: 90%;
+  }
+  .developerSkillsPage span {
+    font-size: 11px;
+  }
+}
+.developerSkillsTitle {
+  grid-area: skillsTitle;
+  font-family: 'Oswald';
+  font-size: 2.5rem;
+  color: var(--bg-accent);
+  /* text-shadow: 10px 7px  5px rgb(0, 0, 0); */
+  text-shadow: -1px 1px 4px rgb(0, 0, 0);
+
+}
+.developerSkillsPage span{
+  display: block;
+  color: whitesmoke;
+  text-shadow: -1px 2px 4px rgb(0, 0, 0);
+
+  font-family: 'Oswald' sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+}
+.html{
+  grid-area: html;
+  color: #ff6600;
+}
+.css {
+  grid-area: css;
+  color: #0096d1;
+}
+.javascript {
+  grid-area: javascript;
+  color: #f7df1d;
+}
+.jquery {
+  grid-area: jquery;
+  color: #0066ff;
+}
+.react {
+  grid-area: react;
+  color: #25d8fd;
+}
+.ruby {
+  grid-area: ruby;
+  color: #d10000;
+}
+.nodejs {
+  grid-area: nodejs;
+  color: #aeff00;
+}
+.gitVCS {
+  grid-area: git;
+  color: #ff6600;
+}
+.bootstrap {
+  grid-area: bootstrap;
+  color: #7253a1;
+}
+
+
+
+
+/* 
+
+Testimonials
+
+*/
+.testimonialBox {
+  height: auto;
+  width: 100%;
+  background-color: var(--bg);
+  padding-top: 50px;
+}
+.testimonialSection {
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 50px;
+  height: 100%;
+  width: 70%;
+  background-color: var(--bg);
+}
+.testimonialsTitle {
+  font-family: 'Oswald';
+  font-size: 2.5rem;
+  color: var(--bg-accent);
+  padding-bottom:  2.5rem;
+  text-align: center;
+  text-shadow: -1px 1px 4px rgb(0, 0, 0);
+}
+.monialSection {
+  color: var(--bg-accent);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  height: auto;
+  line-height: 1.5;
+}
+.testimonials {
+  margin: auto;
+
+  display: grid;
+  grid-template-areas: 
+  "monialImage monialDescription"
+  "monialImage monialName"
+  "monialImage monialFrom"
+  "monialImage monialLink";
+  column-gap: 2rem;
+}
+@media screen and (max-width: 822px){
+  .monialSection {
+    grid-template-columns: 1fr;
+  }
+  .testimonialSection {
+    width: 90%;
+  }
+}
+
+#arrow {
+  background: var(--text-color);
+  color: var(--bg);
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+  height: auto;
+}
+#arrow::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -25px;
+  border: solid 15px transparent;
+  border-right-color: var(--text-color);
+  font-style: none;
+}
+
+
+/* 
+
+Contact me Form
+
+*/
+.contactMeBox {
+  background-color: var(--bg);
+  height: auto;
+}
+.contactMeForm {
+  background-color: var(--bg);
+  height: auto;
+  width: 45%;
+  margin: auto;
+  padding: 50px 0px;
+  
+  display: grid;
+  grid-template-areas:
+  "contactMeSection myInfoBox";
+  grid-template-columns: 1/2fr 2/1fr;
+  gap: 3rem;
+  justify-content: center;
+}
+@media screen and (max-width: 822px){
+  .contactMeForm {
+    grid-template-areas: 
+    " contactMeSection "
+    " myInfoBox ";
+    width: 90%;
+    gap: 0.5rem;
+    margin: auto;
+    justify-content: center;
+  }
+  .contactMeTitle, .myInfoTitle, .myInfoBox{
+    text-align: center;
+  }
+  
+}
+@media screen and (min-width: 823px){
+  .myInfoBox{
+    text-align: right;
+  }
+}
+.contactMeTitle, .myInfoTitle{
+  font-family: 'Oswald';
+  font-size: 2.5rem;
+  color: var(--bg-accent);
+  margin:  20px 0px;
+  text-shadow: -1px 1px 4px rgb(0, 0, 0);
+}
+input, textarea{
+  display: inline;
+  margin-bottom: 10px;
+  width: 21rem;
+}
+.myInfoBox {
+  grid-area: myInfoBox;
+  color: var(--bg-accent);
+  /* text-align: right; */
+}
+.contactMeSection {
+  grid-area: contactMeSection;
+}
+.myInfo {
+  margin: 10px 0px;
+}
+.resumeLink:hover {
+  display: inline;
+  position: relative;
+  top: 2px;
+  background-color: #fbfafa;
+}
+
+
+
+/* 
+
+Footer Section
+
+*/
+.footerBox {
+ height: 100%;
+ background-color: var(--bg-accent);
+}
+.footerSection {
+  width: 55%;
+  margin: auto;
+}
+.copy {
+  text-align: center;
+  color: var(--bg);
+}
+.footerIcons {
+  display: grid;
+  grid-template-areas:
+  " copy "
+  " icons ";
+}
+.twitter {
+  color: #0096d1;
+}
+.linkedin {
+  color: #0066ff;
+}
+.git {
+  color: purple;
+}
+#icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 10px;
+}
+
+#icons a {
+  background-color: white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  position: relative;
+}
+
+#icons a :hover{
+  height: 35px;
+  width: 35px;
+}
+
+#icons a i {
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
