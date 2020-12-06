@@ -19,6 +19,7 @@ import {Parallax} from 'react-parallax';
 const image2 = "https://images.pexels.com/photos/34153/pexels-photo.jpg?cs=srgb&dl=pexels-negative-space-34153.jpg&fm=jpg";
 const image1 = "https://images.pexels.com/photos/2115257/pexels-photo-2115257.jpeg?cs=srgb&dl=pexels-john-petalcurin-2115257.jpg&fm=jpg"
 
+
 const paragraphStyling ={
     textIndent: '2vw',
     margin: '10px 0px',
@@ -42,9 +43,7 @@ export default function MainSection () {
 
             <div className="aboutMeBox" id="aboutMeId">
                 <div className="aboutMePage" >
-                    
-                    <img className="profilePic" alt=""></img>
-
+                        <span className="profilePic"></span>
                         <span className="aboutMeSection">
                         <div className="aboutMeTitle">About <strong style={{fontWeight: 700}}>Me</strong></div> 
                         <h6 style={{marginBottom: '10px'}}>Hello, my name is <strong style={salmon}>Josue Mendez !</strong></h6>

@@ -90,8 +90,8 @@ export default function Testimonials () {
                 <div >
                     <div className="testimonialsTitle" >Testimonials</div>
                     <span className="monialSection" style={{gridArea: 'testimonials'}}>
-                        {[...testimonials].map((testimonial) => {
-                            return <Monials testimonial={testimonial} />;
+                        {[...testimonials].map((testimonial, i) => {
+                            return <Monials testimonial={testimonial} key={i}/>;
                         })}
                     </span>
                 </div>
